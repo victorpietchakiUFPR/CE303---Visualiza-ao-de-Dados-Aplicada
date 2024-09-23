@@ -153,7 +153,7 @@ knitr::opts_chunk$set(echo = TRUE)
     <img src="https://i0.wp.com/flowingdata.com/wp-content/uploads/2014/05/Divorce-rate-in-Maine-vs-margarine.png?w=703&quality=100&ssl=1" width="600px">
 </center>
 
-> <div align="center" style="font-size: 14px;">Figura 6: Taxa de divórcio a cada 1000 pessoas na cidade de Maine (EUA) se correlaciona com o consumo de libras _per capita_ de margarina entre os anos 2000 e 2009.</div>
+> <div align="center" style="font-size: 14px;">Figura 6: Taxa de divórcio a cada 1000 pessoas na cidade de Maine (EUA) se correlaciona com o consumo de libras _per capita_ de margarina entre os anos 2000 e 2009. Fonte: Flowingdata.</div>
 
 <p>
 <div align="justify" style="font-size: 16px;">&nbsp;&nbsp;&nbsp;&nbsp; Este foi um dos resultados que Tyler Vigen encontrou ao escrever um programa de computador para identificar automaticamente coisas que se correlacionassem. Como pode ser visto, com o passar dos anos, o número de divórcios a cada 1000 pessoas diminui de forma proporcional ao consumo de margarina nos EUA (com índice de correlação de _Pearson_ a 0.992558), indicando que estariam na mesma tendência. Entretanto, é verdade que quanto menos libras de margarina consumidas pela população dos EUA, menor a taxa de divórcio em uma cidade americana chamada Maine? Se ninguém mais nos EUA consumir margarina, então não existirá mais divórcios na respectiva cidade? Essas questões são possíveis de serem feitas a partir dessa visualização, entretanto, na realidade, sabemos que é uma mera coincidência! </div>
