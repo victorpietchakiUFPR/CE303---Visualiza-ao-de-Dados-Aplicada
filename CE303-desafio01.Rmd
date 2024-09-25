@@ -2,177 +2,323 @@
 title: "Visualização de Dados Aplicada"
 author: "victorpietchaki"
 date: "2024-09-23"
-output: html_document
+output:
+  html_document: default
+  pdf_document: default
 ---
-
-
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
+<style>
+h2{margin-top: 40px}
+</style>
 <p>
-<div align="right" style="font-size: 16px;"> Alunos: </div>
-<div align="right" style="font-size: 16px;"> João Victor Pietchaki Gonçalves </div>
+
+::: {align="right" style="font-size: 16px;"}
+Alunos:
+:::
+
+::: {align="right" style="font-size: 16px;"}
+João Victor Pietchaki Gonçalves <br> Lenardo Eizo Sakai <br> Victor Pignatari <br> Bianca Lang
+:::
 
 <p>
-<div align="right" style="font-size: 16px;"> Prof. Dr. Anderson Ara </div>
-<div align="right" style="font-size: 16px;"> Desafio #01 - CM303 </div>
-<div align="right" style="font-size: 16px;"> DEST/UFPR </div>
+
+::: {align="right" style="font-size: 16px;"}
+Prof. Dr. Anderson Ara
+:::
+
+::: {align="right" style="font-size: 16px;"}
+Desafio #01 - CM303
+:::
+
+::: {align="right" style="font-size: 16px;"}
+DEST/UFPR
+:::
 
 ## Objetivos
 
-<div align="justify" style="font-size: 16px;">&nbsp;&nbsp;&nbsp;&nbsp; Este artigo visa dar um panorama sobre o que é a efetividade em visualização de dados bem como relatar 3 tipos de gráficos não-efetivos. </div>
-
+::: {align="justify" style="font-size: 16px;"}
+     Este artigo visa dar um panorama sobre o que é a efetividade em visualização de dados bem como relatar 3 tipos de gráficos não-efetivos.
+:::
 
 ## Visualização de Dados Aplicada
 
 <p>
-<div align="justify" style="font-size: 16px;">&nbsp;&nbsp;&nbsp;&nbsp; A visualização de dados não é um campo de aplicação recente. Suas origens datam de séculos atrás com a cartografia (século XVI), William Playfair (século XVIII) e posteriormente com Charles Minard (século XIX), por exemplo, e eram feitas manualmente em sua maioria. </div>
+
+::: {align="justify" style="font-size: 16px;"}
+     A visualização de dados não é um campo de aplicação recente. Suas origens datam de séculos atrás com a cartografia (século XVI), William Playfair (século XVIII) e posteriormente com Charles Minard (século XIX), por exemplo, e eram feitas manualmente em sua maioria.
+:::
 
 <p>
-<div align="justify" style="font-size: 16px;">&nbsp;&nbsp;&nbsp;&nbsp; Atualmente, grande parte das visualizações de dados se encontram em formas de dashboards interativos, infográficos e/ou até gráficos mais criativos. A flexibilidade trazida pelas tecnologias do século XXI (como o próprio Python, R e Power BI) permitiram um enorme avanço nessa área, garantindo ainda a abstração de ideias e padrões contidas em uma quantidade de dados cada vez maior. </div>
+
+::: {align="justify" style="font-size: 16px;"}
+     Atualmente, grande parte das visualizações de dados se encontram em formas de dashboards interativos, infográficos e/ou até gráficos mais criativos. A flexibilidade trazida pelas tecnologias do século XXI (como o próprio Python, R e Power BI) permitiram um enorme avanço nessa área, garantindo ainda a abstração de ideias e padrões contidas em uma quantidade de dados cada vez maior.
+:::
 
 <p>
-<div align="justify" style="font-size: 16px;">&nbsp;&nbsp;&nbsp;&nbsp; Dada a grande quantidade e instantaneidade das informações, a construção de visualização de dados tem sido cada vez mais demandada. Entretanto, todas elas são de qualidade? Ou seja, todas são efetivas para com a principal função a qual deveria exercer? </div>
+
+::: {align="justify" style="font-size: 16px;"}
+     Dada a grande quantidade e instantaneidade das informações, a construção de visualização de dados tem sido cada vez mais demandada. Entretanto, todas elas são de qualidade? Ou seja, todas são efetivas para com a principal função a qual deveria exercer?
+:::
 
 ## O Que é um Gráfico Efetivo?
 
 <p>
-<div align="justify" style="font-size: 16px;">&nbsp;&nbsp;&nbsp;&nbsp; Por ter se tornado popular no ambiente de negócios e na comunicação jornalística, muitas e muitas visualizações têm sido criadas diariamente. Concomitantemente, nem todas comunicam ideias sobre o respectivo conjunto de dados de forma eficiente. Afinal, o que seria um gráfico efetivo? </div>
+
+::: {align="justify" style="font-size: 16px;"}
+     Por ter se tornado popular no ambiente de negócios e na comunicação jornalística, muitas e muitas visualizações têm sido criadas diariamente. Concomitantemente, nem todas comunicam ideias sobre o respectivo conjunto de dados de forma eficiente. Afinal, o que seria um gráfico efetivo?
+:::
 
 <p>
-<div align="justify" style="font-size: 16px;">&nbsp;&nbsp;&nbsp;&nbsp; Um gráfico efetivo, por força, é identificável. Não à toa, o célebre estatístico Edward Tufte é autor da seguinte frase: "Excelência gráfica é a que oferece ao espectador o maior número de ideias no menor tempo possível, com menos tinta no menor espaço". Ademais, o mesmo admirável autor destaca 4 princípios para gráficos de excelência: </div>
+
+::: {align="justify" style="font-size: 16px;"}
+     Um gráfico efetivo, por força, é identificável. Não à toa, o célebre estatístico Edward Tufte é autor da seguinte frase: "Excelência gráfica é a que oferece ao espectador o maior número de ideias no menor tempo possível, com menos tinta no menor espaço". Ademais, o mesmo admirável autor destaca 4 princípios para gráficos de excelência:
+:::
 
 <p>
-1. <div style="font-size: 16px;"> Acima de tudo, mostre os dados;</div>
-2. <div style="font-size: 16px;"> Maximize a taxa de dados e tinta; </div>
-3. <div style="font-size: 16px;"> Apague a tinta que não é de dados;</div>
-4. <div style="font-size: 16px;"> Apague a tinta de dados redundantes.</div>
+
+1.  ::: {style="font-size: 16px;"}
+    Acima de tudo, mostre os dados;
+    :::
+
+2.  ::: {style="font-size: 16px;"}
+    Maximize a taxa de dados e tinta;
+    :::
+
+3.  ::: {style="font-size: 16px;"}
+    Apague a tinta que não é de dados;
+    :::
+
+4.  ::: {style="font-size: 16px;"}
+    Apague a tinta de dados redundantes.
+    :::
 
 <p>
-<div align="justify" style="font-size: 16px;">&nbsp;&nbsp;&nbsp;&nbsp; Junto a isso, Alberto Cairo, outro ilustre profissional de visualização de dados, nos indica o seguinte: "Os gráficos de informação devem ser esteticamente agradáveis, mas muitos designers pensam em estética antes de pensarem na estrutura em si, na história que o gráfico deve contar". </div>
+
+::: {align="justify" style="font-size: 16px;"}
+     Junto a isso, Alberto Cairo, outro ilustre profissional de visualização de dados, nos indica o seguinte: "Os gráficos de informação devem ser esteticamente agradáveis, mas muitos designers pensam em estética antes de pensarem na estrutura em si, na história que o gráfico deve contar".
+:::
 
 <p>
-<div align="justify" style="font-size: 16px;">&nbsp;&nbsp;&nbsp;&nbsp; Ainda, e igualmente importante, a fidelidade aos dados é crucial para se construir gráficos efetivos! Aliás, como o próprio nome já diz, a visualização é dos dados, e não de ideias subjetivas de quem o desenvolve. </div>
+
+::: {align="justify" style="font-size: 16px;"}
+     Ainda, e igualmente importante, a fidelidade aos dados é crucial para se construir gráficos efetivos! Aliás, como o próprio nome já diz, a visualização é dos dados, e não de ideias subjetivas de quem o desenvolve.
+:::
 
 <p>
-<div align="justify" style="font-size: 16px;">&nbsp;&nbsp;&nbsp;&nbsp; Sendo assim, tomaremos como base esses três grandes fundamentos (1) otimização de elementos gráficos para destacar informações, 2) _estrutura gráfica_storytelling_, 3) fidelidade aos dados) e relataremos gráficos não-efetivos que encontramos em nossas pesquisas. </div>
+
+::: {align="justify" style="font-size: 16px;"}
+     Sendo assim, tomaremos como base esses três grandes fundamentos (1) otimização de elementos gráficos para destacar informações, 2) *estrutura gráfica_storytelling*, 3) fidelidade aos dados) e relataremos gráficos não-efetivos que encontramos em nossas pesquisas.
+:::
 
 ## Exemplos de Gráficos Não-Efetivos
 
 ### Mapas de Calor: Vendo Apenas em Absoluto
-<center>
-    <img src="https://i0.wp.com/flowingdata.com/wp-content/uploads/2017/02/Absolutes.png?resize=768%2C567&quality=100&ssl=1" width="600px">
-</center>
 
+<center><img src="https://i0.wp.com/flowingdata.com/wp-content/uploads/2017/02/Absolutes.png?resize=768%2C567&amp;quality=100&amp;ssl=1" width="600px"/></center>
 
-
-> <div align="center" style="font-size: 14px;"> Figura 1 : Mapa de densidade populacional dos Estados Unidos. Fonte: Flowingdata. </div>
-
-<p>
-<div align="justify" style="font-size: 16px;">&nbsp;&nbsp;&nbsp;&nbsp; Como editado em um artigo da Wikipédia, "um **mapa de calor** é uma técnica de visualização de dados que mostra a magnitude de um fenômeno por meio de cor em duas dimensões. A variação de cor pode ser por matiz ou intensidade, dando pistas visuais óbvias ao leitor sobre como o fenômeno está agrupado ou varia no espaço". </div>
+> ::: {align="center" style="font-size: 14px;"}
+> Figura 1 : Mapa de densidade populacional dos Estados Unidos. Fonte: Flowingdata.
+> :::
 
 <p>
-<div align="justify" style="font-size: 16px;">&nbsp;&nbsp;&nbsp;&nbsp; Seja o seguinte conjunto de dados um exemplo: números absolutos de roubos por estado nos Estados Unidos da América em 2024. Observando um gráfico que represente tal conjunto de dados, não é possível dizer que um estado é mais perigoso que outro justificando que o primeiro tem 2 roubos em um dado período de tempo enquanto o segundo apenas 1 registrado. E se o primeiro estado tiver 1000 vezes a população do segundo? Assim, observa-se que representar graficamente tais valores (absolutos) em um mapa de calor seria o mesmo que fornecer um mapa de densidade populacional, tornando impossível uma investigação comparativa entre regiões geográficas. </div>
 
-
-<p>
-<div align="justify" style="font-size: 16px;">&nbsp;&nbsp;&nbsp;&nbsp; Para tornar _storytelling_ possível, é muito mais útil pensar os dados em termos de porcentagens e taxas do que de valores totais ou absolutos. </div>
-
-<p>
-<div align="justify" style="font-size: 16px;">&nbsp;&nbsp;&nbsp;&nbsp; Abaixo, uma ilustração cômica compactando bem a inefetividade de mapas de calor para valores absolutos:
+::: {align="justify" style="font-size: 16px;"}
+     Como editado em um artigo da Wikipédia, "um **mapa de calor** é uma técnica de visualização de dados que mostra a magnitude de um fenômeno por meio de cor em duas dimensões. A variação de cor pode ser por matiz ou intensidade, dando pistas visuais óbvias ao leitor sobre como o fenômeno está agrupado ou varia no espaço".
+:::
 
 <p>
-<center>
-    <img src="https://imgs.xkcd.com/comics/heatmap.png" width="400px">
-</center>
 
-> <div align="center" style="font-size: 14px;">&nbsp;&nbsp;&nbsp;&nbsp; Figura 2: História em quadrinhos sobre mapas de calor. Fonte: xkcd.</div>
-
-<p>
-<div align="justify" style="font-size: 16px;">&nbsp;&nbsp;&nbsp;&nbsp; Na **figura 2**, o mapa do canto superior esquerdo representa os usuários de um site, o do canto superior direito os inscritos no _"Martha Stewart Living"_, e o último os consumidores de um certo tipo de pornografia. Entretanto, visualmente, os três mapas de calor são idênticos, como se fossem um mapa da densidade populacional dos EUA. </div>
+::: {align="justify" style="font-size: 16px;"}
+     Seja o seguinte conjunto de dados um exemplo: números absolutos de roubos por estado nos Estados Unidos da América em 2024. Observando um gráfico que represente tal conjunto de dados, não é possível dizer que um estado é mais perigoso que outro justificando que o primeiro tem 2 roubos em um dado período de tempo enquanto o segundo apenas 1 registrado. E se o primeiro estado tiver 1000 vezes a população do segundo? Assim, observa-se que representar graficamente tais valores (absolutos) em um mapa de calor seria o mesmo que fornecer um mapa de densidade populacional, tornando impossível uma investigação comparativa entre regiões geográficas.
+:::
 
 <p>
-<div align="justify" style="font-size: 16px;">&nbsp;&nbsp;&nbsp;&nbsp; Como diz o texto da **figura 1**... **Vendo apenas em absolutos**: Isto é apenas população. Quando comparando entre lugares, categorias ou grupos, deve ser comparado de forma justa e considerar valores relativos </div>
+
+::: {align="justify" style="font-size: 16px;"}
+     Para tornar *storytelling* possível, é muito mais útil pensar os dados em termos de porcentagens e taxas do que de valores totais ou absolutos.
+:::
+
+<p>
+
+<div align="justify" style="font-size: 16px;">
+
+     Abaixo, uma ilustração cômica compactando bem a inefetividade de mapas de calor para valores absolutos:
+
+<p>
+
+<center><img src="https://imgs.xkcd.com/comics/heatmap.png" width="400px"/></center>
+
+> ::: {align="center" style="font-size: 14px;"}
+>      Figura 2: História em quadrinhos sobre mapas de calor. Fonte: xkcd.
+> :::
+
+<p>
+
+::: {align="justify" style="font-size: 16px;"}
+     Na **figura 2**, o mapa do canto superior esquerdo representa os usuários de um site, o do canto superior direito os inscritos no *"Martha Stewart Living"*, e o último os consumidores de um certo tipo de pornografia. Entretanto, visualmente, os três mapas de calor são idênticos, como se fossem um mapa da densidade populacional dos EUA.
+:::
+
+<p>
+
+::: {align="justify" style="font-size: 16px;"}
+     Como diz o texto da **figura 1**... **Vendo apenas em absolutos**: Isto é apenas população. Quando comparando entre lugares, categorias ou grupos, deve ser comparado de forma justa e considerar valores relativos
+:::
 
 ### Gráfico de Área Empilhada Concêntrica: Confundindo Dimensão e Formato de Áreas
 
-<center>
-    <img src="https://i0.wp.com/flowingdata.com/wp-content/uploads/2017/02/Area-dimensions.png?resize=768%2C284&quality=100&ssl=1" width="600px">
-</center>
+<center><img src="https://i0.wp.com/flowingdata.com/wp-content/uploads/2017/02/Area-dimensions.png?resize=768%2C284&amp;quality=100&amp;ssl=1" width="600px"/></center>
 
-> <div align="center" style="font-size: 14px;"> Figura 3: Ilustração para indicar diferenças de representação de área através de proporção e formato adequados. Fonte Flowingdata.</div>
-
-<p>
-<div align="justify" style="font-size: 16px;">&nbsp;&nbsp;&nbsp;&nbsp; Na **figura 3**, vê-se que ambos os retângulos completam a mesma quantidade de área, mas têm formatos muito diferentes. </div>
+> ::: {align="center" style="font-size: 14px;"}
+> Figura 3: Ilustração para indicar diferenças de representação de área através de proporção e formato adequados. Fonte Flowingdata.
+> :::
 
 <p>
-<div align="justify" style="font-size: 16px;">&nbsp;&nbsp;&nbsp;&nbsp; Quando falamos de representações gráficas que dispõem de áreas, é importante que elas sejam proporcionais aos valores que representam, bem como tenham o mesmo ou muito semelhante formato. Segue abaixo um gráfico de área empilhada concêntrica que "informa" a distribuição populacional do quanto é gasto em doces por semana. </div>
+
+::: {align="justify" style="font-size: 16px;"}
+     Na **figura 3**, vê-se que ambos os retângulos completam a mesma quantidade de área, mas têm formatos muito diferentes.
+:::
 
 <p>
-<center>
-    <img src="https://www.oldstreetsolutions.com/wp-content/uploads/2021/05/Groceries-Weird-Chart.jpg" width="400px">
-</center>
 
-> <div align="center" style="font-size: 14px;">Figura 4: Gráfico de Área Empilhada Concêntrica do percentual de pessoas por faixa de gastos com doces por semana. Fonte: Old Street Solutions.</div>
-
-<p>
-<div align="justify" style="font-size: 16px;"> &nbsp;&nbsp;&nbsp;&nbsp;Traduçao da **figura 4**:
-
-**Quanto você gasta em doces por semana?** </div>
+::: {align="justify" style="font-size: 16px;"}
+     Quando falamos de representações gráficas que dispõem de áreas, é importante que elas sejam proporcionais aos valores que representam, bem como tenham o mesmo ou muito semelhante formato. Segue abaixo um gráfico de área empilhada concêntrica que "informa" a distribuição populacional do quanto é gasto em mercado por semana.
+:::
 
 <p>
-+ <div style="font-size: 16px;"> 22% abaixo de $100 </div>
-+ <div style="font-size: 16px;"> 26% em torno de $100 </div>
-+ <div style="font-size: 16px;"> 39% de $100 a $200 </div>
-+ <div style="font-size: 16px;"> 10% de $200 a $300 </div>
-+ <div style="font-size: 16px;"> 3% mais que $300 </div>
+
+<center><img src="https://www.oldstreetsolutions.com/wp-content/uploads/2021/05/Groceries-Weird-Chart.jpg" width="400px"/></center>
+
+> ::: {align="center" style="font-size: 14px;"}
+> Figura 4: Gráfico de Área Empilhada Concêntrica do percentual de pessoas por faixa de gastos com mercado por semana. Fonte: Old Street Solutions.
+> :::
 
 <p>
-<div align="justify" style="font-size: 16px;">&nbsp;&nbsp;&nbsp;&nbsp; Neste tipo de gráfico, as áreas maiores são sobrepostas pelas áreas menores. Entretanto, essa sobreposição torna desproporcionais as áreas e os formatos, causando muita confusão. Neste exemplo, fica nítido que aqueles que gastam de $100 a $200 representam a maioria da população, mas não é o mesmo para aqueles que gastam em torno de $100 e compõem o segundo maior grupo de pessoas. Ademais, a diferença entre as áreas amarela e azul é de apenas 4%, mas a azul aparenta ser muito maior. Não o bastante, esses 4% que de fato representam a cor amarela do gráfico aparentam ser muito maiores que o pequeno quadrado vermelho que representa 3% da população. Enfim, apenas um não para essa visualização! </div>
+
+::: {align="justify" style="font-size: 16px;"}
+    Traduçao da **figura 4**:
+
+**Quanto você gasta em mercado por semana?**
+:::
 
 <p>
-<div align="justify" style="font-size: 16px;">&nbsp;&nbsp;&nbsp;&nbsp; Sobrepor áreas como esse gráfico torna desproporcional e gera deformação, impedindo uma visualização efetiva das informações. </div>
+
+-   ::: {style="font-size: 16px;"}
+    22% abaixo de \$100
+    :::
+
+-   ::: {style="font-size: 16px;"}
+    26% em torno de \$100
+    :::
+
+-   ::: {style="font-size: 16px;"}
+    39% de \$100 a \$200
+    :::
+
+-   ::: {style="font-size: 16px;"}
+    10% de \$200 a \$300
+    :::
+
+-   ::: {style="font-size: 16px;"}
+    3% mais que \$300
+    :::
+
+<p>
+
+::: {align="justify" style="font-size: 16px;"}
+     Neste tipo de gráfico, as áreas maiores são sobrepostas pelas áreas menores. Entretanto, essa sobreposição torna desproporcionais as áreas e os formatos, causando muita confusão. Neste exemplo, fica nítido que aqueles que gastam de \$100 a \$200 representam a maioria da população, mas não é o mesmo para aqueles que gastam em torno de \$100 e compõem o segundo maior grupo de pessoas. Ademais, a diferença entre as áreas amarela e azul é de apenas 4%, mas a azul aparenta ser muito maior. Não o bastante, esses 4% que de fato representam a cor amarela do gráfico aparentam ser muito maiores que o pequeno quadrado vermelho que representa 3% da população. Enfim, apenas um não para essa visualização!
+:::
+
+<p>
+
+::: {align="justify" style="font-size: 16px;"}
+     Sobrepor áreas como esse gráfico torna desproporcional e gera deformação, impedindo uma visualização efetiva das informações. Uma escolha  garantida seria o gráfico de barras, que permite exibir claramente as diferenças entre cada categoria. Aleternativamente, se o foco for a proporção em relação ao todo, também é possível utilizar o gráfico de setores, considerando que não são muitas observações, e possuem diferenças notáveis entre cada uma.
+:::
 
 ### Gráfico de Eixos Duplos: Criando Ideia de Causalidade a Partir de Correlação
 
-<center>
-    <img src="https://i0.wp.com/flowingdata.com/wp-content/uploads/2017/02/Dual-axes.png?resize=768%2C410&quality=100&ssl=1" width="600px">
-</center>
+<center><img src="https://i0.wp.com/flowingdata.com/wp-content/uploads/2017/02/Dual-axes.png?resize=768%2C410&amp;quality=100&amp;ssl=1" width="600px"/></center>
 
-> <div align="center" style="font-size: 14px;">Figura 5: Ilustração de Gráfico de Dois Eixos Verticais. Fonte: Flowingdata.</div>
-
-<p>
-<div align="justify" style="font-size: 16px;">&nbsp;&nbsp;&nbsp;&nbsp; Um gráfico de dois eixos verticais usa duas escalas diferentes e pode ser um argumento de causalidade forçada. Ao usar eixos duplos, a magnitude pode encolher ou expandir para cada métrica. Isso é feito tipicamente para implicar correlação e causalidade. “Por causa disso, essa outra coisa aconteceu. Veja, está claro.” Como não é senso comum que correlação não implica logicamente em causalidade e que a mera coincidência é tida por alguns como fonte para criação de teorias da conspiração, esse tipo de gráfico pode gerar confusão no sentido da integridade dos dados e da história a ser contada. </div>
+> ::: {align="center" style="font-size: 14px;"}
+> Figura 5: Ilustração de Gráfico de Dois Eixos Verticais. Fonte: Flowingdata.
+> :::
 
 <p>
-<div align="justify" style="font-size: 16px;">&nbsp;&nbsp;&nbsp;&nbsp; O exemplo abaixo foi resultado de um projeto de identificação de correlações espúrias conduzido por Tyler Vigen (ele descobriu mais de 4000 correlações com dados dos EUA. Curiosidade inútil: muitas coisas se correlacionavam com o consumo de queijo lol) </div>
+
+::: {align="justify" style="font-size: 16px;"}
+     Um gráfico de dois eixos verticais usa duas escalas diferentes e pode ser um argumento de causalidade forçada. Ao usar eixos duplos, a magnitude pode encolher ou expandir para cada métrica. Isso é feito tipicamente para implicar correlação e causalidade. “Por causa disso, essa outra coisa aconteceu. Veja, está claro.” Como não é senso comum que correlação não implica logicamente em causalidade e que a mera coincidência é tida por alguns como fonte para criação de teorias da conspiração, esse tipo de gráfico pode gerar confusão no sentido da integridade dos dados e da história a ser contada.
+:::
 
 <p>
-<center>
-    <img src="https://i0.wp.com/flowingdata.com/wp-content/uploads/2014/05/Divorce-rate-in-Maine-vs-margarine.png?w=703&quality=100&ssl=1" width="600px">
-</center>
 
-> <div align="center" style="font-size: 14px;">Figura 6: Taxa de divórcio a cada 1000 pessoas na cidade de Maine (EUA) se correlaciona com o consumo de libras _per capita_ de margarina entre os anos 2000 e 2009. Fonte: Flowingdata.</div>
-
-<p>
-<div align="justify" style="font-size: 16px;">&nbsp;&nbsp;&nbsp;&nbsp; Este foi um dos resultados que Tyler Vigen encontrou ao escrever um programa de computador para identificar automaticamente coisas que se correlacionassem. Como pode ser visto, com o passar dos anos, o número de divórcios a cada 1000 pessoas diminui de forma proporcional ao consumo de margarina nos EUA (com índice de correlação de _Pearson_ a 0.992558), indicando que estariam na mesma tendência. Entretanto, é verdade que quanto menos libras de margarina consumidas pela população dos EUA, menor a taxa de divórcio em uma cidade americana chamada Maine? Se ninguém mais nos EUA consumir margarina, então não existirá mais divórcios na respectiva cidade? Essas questões são possíveis de serem feitas a partir dessa visualização, entretanto, na realidade, sabemos que é uma mera coincidência! </div>
+::: {align="justify" style="font-size: 16px;"}
+     O exemplo abaixo foi resultado de um projeto de identificação de correlações espúrias conduzido por Tyler Vigen (ele descobriu mais de 4000 correlações com dados dos EUA. Curiosidade inútil: muitas coisas se correlacionavam com o consumo de queijo lol)
+:::
 
 <p>
-<div align="justify" style="font-size: 16px;">&nbsp;&nbsp;&nbsp;&nbsp; De qualquer forma, o modo satírico e divertido de T. Vigen levantou alguns pontos importantes: </div>
+
+<center><img src="https://i0.wp.com/flowingdata.com/wp-content/uploads/2014/05/Divorce-rate-in-Maine-vs-margarine.png?w=703&amp;quality=100&amp;ssl=1" width="600px"/></center>
+
+> ::: {align="center" style="font-size: 14px;"}
+> Figura 6: Taxa de divórcio a cada 1000 pessoas na cidade de Maine (EUA) se correlaciona com o consumo de libras *per capita* de margarina entre os anos 2000 e 2009. Fonte: Flowingdata.
+> :::
 
 <p>
-+ <div style="font-size: 16px;"> Ser crítico com as estatísticas (e visualizações de dados em gráfico de dois eixos) que se vê;</div>
-+ <div style="font-size: 16px;"> Saber que correlação não implica em causalidade;</div>
-+ <div style="font-size: 16px;"> Exigir rigor científico para mostrar que há uma correlação forte e estatisticamente significativa.</div>
 
+::: {align="justify" style="font-size: 16px;"}
+     Este foi um dos resultados que Tyler Vigen encontrou ao escrever um programa de computador para identificar automaticamente coisas que se correlacionassem. Como pode ser visto, com o passar dos anos, o número de divórcios a cada 1000 pessoas diminui de forma proporcional ao consumo de margarina nos EUA (com índice de correlação de *Pearson* a 0.992558), indicando que estariam na mesma tendência. Entretanto, é verdade que quanto menos libras de margarina consumidas pela população dos EUA, menor a taxa de divórcio em uma cidade americana chamada Maine? Se ninguém mais nos EUA consumir margarina, então não existirá mais divórcios na respectiva cidade? Essas questões são possíveis de serem feitas a partir dessa visualização, entretanto, na realidade, sabemos que é uma mera coincidência!
+:::
+
+<p>
+
+::: {align="justify" style="font-size: 16px;"}
+     De qualquer forma, o modo satírico e divertido de T. Vigen levantou alguns pontos importantes:
+:::
+
+<p>
+
+-   ::: {style="font-size: 16px;"}
+    Ser crítico com as estatísticas (e visualizações de dados em gráfico de dois eixos) que se vê;
+    :::
+
+-   ::: {style="font-size: 16px;"}
+    Saber que correlação não implica em causalidade;
+    :::
+
+-   ::: {style="font-size: 16px;"}
+    Exigir rigor científico para mostrar que há uma correlação forte e estatisticamente significativa.
+    :::
 
 ## Fontes
-+ <div style="font-size: 16px;"> YAU, Nathan. **How to spot visualization lies**. Disponível em: [https://flowingdata.com/2017/02/09/how-to-spot-visualization-lies/](https://flowingdata.com/2017/02/09/how-to-spot-visualization-lies/). Acesso em: 22 set. 2024.</div>
-+ <div style="font-size: 16px;"> YAU, Nathan. **Random things that correlate**. Disponível em: [https://flowingdata.com/2014/05/12/random-things-that-correlate/](https://flowingdata.com/2014/05/12/random-things-that-correlate/). Acesso em: 22 set. 2024.</div>
-+ <div style="font-size: 16px;"> FLETCHER, James. **Spurious correlations: Margarine linked to divorce?**. BBC News Magazine, 2014. Disponível em: [https://www.bbc.com/news/magazine-27537142](https://www.bbc.com/news/magazine-27537142). Acesso em: 22 set. 2024.</div>
-+ <div style="font-size: 16px;"> XKCD. **Correlation**. Disponível em: [https://xkcd.com/1138/](https://xkcd.com/1138/). Acesso em: 22 set. 2024.</div>
-+ <div style="font-size: 16px;"> DUNFORD, Cristopher. **When Data Visualization Really Isn’t Useful (and When It Is)**. Disponível em: [https://www.oldstreetsolutions.com/good-and-bad-data-visualization](https://www.oldstreetsolutions.com/good-and-bad-data-visualization). Acesso em: 22 set. 2024.</div>
-+ <div style="font-size: 16px;"> WIKIPÉDIA. **Mapa de calor**. Disponível em: [https://pt.wikipedia.org/wiki/Mapa_de_calor](https://pt.wikipedia.org/wiki/Mapa_de_calor). Acesso em: 22 set. 2024.</div>
-+ <div style="font-size: 16px;"> ARA, Anderson. (2024). Visualizaçao de Dados Aplicada Slides 02 [Slides]. Universidade Federal do Paraná. </div>
-<p>
+
+-   ::: {style="font-size: 16px;"}
+    YAU, Nathan. **How to spot visualization lies**. Disponível em: <https://flowingdata.com/2017/02/09/how-to-spot-visualization-lies/>. Acesso em: 22 set. 2024.
+    :::
+
+-   ::: {style="font-size: 16px;"}
+    YAU, Nathan. **Random things that correlate**. Disponível em: <https://flowingdata.com/2014/05/12/random-things-that-correlate/>. Acesso em: 22 set. 2024.
+    :::
+
+-   ::: {style="font-size: 16px;"}
+    FLETCHER, James. **Spurious correlations: Margarine linked to divorce?**. BBC News Magazine, 2014. Disponível em: <https://www.bbc.com/news/magazine-27537142>. Acesso em: 22 set. 2024.
+    :::
+
+-   ::: {style="font-size: 16px;"}
+    XKCD. **Correlation**. Disponível em: <https://xkcd.com/1138/>. Acesso em: 22 set. 2024.
+    :::
+
+-   ::: {style="font-size: 16px;"}
+    DUNFORD, Cristopher. **When Data Visualization Really Isn’t Useful (and When It Is)**. Disponível em: <https://www.oldstreetsolutions.com/good-and-bad-data-visualization>. Acesso em: 22 set. 2024.
+    :::
+
+-   ::: {style="font-size: 16px;"}
+    WIKIPÉDIA. **Mapa de calor**. Disponível em: <https://pt.wikipedia.org/wiki/Mapa_de_calor>. Acesso em: 22 set. 2024.
+    :::
+
+-   ::: {style="font-size: 16px;"}
+    ARA, Anderson. (2024). Visualizaçao de Dados Aplicada Slides 02 [Slides]. Universidade Federal do Paraná.
+    :::
+
+    <p>
