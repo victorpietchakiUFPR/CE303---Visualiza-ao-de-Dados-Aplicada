@@ -42,91 +42,15 @@ DEST/UFPR
      Este artigo visa dar um panorama sobre o que é a efetividade em visualização de dados bem como relatar 3 tipos de gráficos não-efetivos.
 :::
 
-## Visualização de Dados Aplicada
-
-<p>
-
-::: {align="justify" style="font-size: 12px;"}
-     A visualização de dados não é um campo de aplicação recente. Suas origens datam de séculos atrás com a cartografia (século XVI), William Playfair (século XVIII) e posteriormente com Charles Minard (século XIX), por exemplo, e eram feitas manualmente em sua maioria.
-:::
-
-<p>
-
-::: {align="justify" style="font-size: 12px;"}
-     Atualmente, grande parte das visualizações de dados se encontram em formas de dashboards interativos, infográficos e/ou até gráficos mais criativos. A flexibilidade trazida pelas tecnologias do século XXI (como o próprio Python, R e Power BI) permitiram um enorme avanço nessa área, garantindo ainda a abstração de ideias e padrões contidas em uma quantidade de dados cada vez maior.
-:::
-
-<p>
-
-::: {align="justify" style="font-size: 12px;"}
-     Dada a grande quantidade e instantaneidade das informações, a construção de visualização de dados tem sido cada vez mais demandada. Entretanto, todas elas são de qualidade? Ou seja, todas são efetivas para com a principal função a qual deveria exercer?
-:::
-
-## O Que é um Gráfico Efetivo?
-
-<p>
-
-::: {align="justify" style="font-size: 12px;"}
-     Por ter se tornado popular no ambiente de negócios e na comunicação jornalística, muitas e muitas visualizações têm sido criadas diariamente. Concomitantemente, nem todas comunicam ideias sobre o respectivo conjunto de dados de forma eficiente. Afinal, o que seria um gráfico efetivo?
-:::
-
-<p>
-
-::: {align="justify" style="font-size: 12px;"}
-     Um gráfico efetivo, por força, é identificável. Não à toa, o célebre estatístico Edward Tufte é autor da seguinte frase: "Excelência gráfica é a que oferece ao espectador o maior número de ideias no menor tempo possível, com menos tinta no menor espaço". Ademais, o mesmo admirável autor destaca 4 princípios para gráficos de excelência:
-:::
-
-<p>
-
-1.  ::: {style="font-size: 12px;"}
-    Acima de tudo, mostre os dados;
-    :::
-
-2.  ::: {style="font-size: 12px;"}
-    Maximize a taxa de dados e tinta;
-    :::
-
-3.  ::: {style="font-size: 12px;"}
-    Apague a tinta que não é de dados;
-    :::
-
-4.  ::: {style="font-size: 12px;"}
-    Apague a tinta de dados redundantes.
-    :::
-
-<p>
-
-::: {align="justify" style="font-size: 12px;"}
-     Junto a isso, Alberto Cairo, outro ilustre profissional de visualização de dados, nos indica o seguinte: "Os gráficos de informação devem ser esteticamente agradáveis, mas muitos designers pensam em estética antes de pensarem na estrutura em si, na história que o gráfico deve contar".
-:::
-
-<p>
-
-::: {align="justify" style="font-size: 12px;"}
-     Ainda, e igualmente importante, a fidelidade aos dados é crucial para se construir gráficos efetivos! Aliás, como o próprio nome já diz, a visualização é dos dados, e não de ideias subjetivas de quem o desenvolve.
-:::
-
-<p>
-
-::: {align="justify" style="font-size: 12px;"}
-     Sendo assim, tomaremos como base esses três grandes fundamentos (1) otimização de elementos gráficos para destacar informações, 2) **storytelling**, 3) fidelidade aos dados) e relataremos gráficos não-efetivos que encontramos em nossas pesquisas.
-:::
-
 ## Exemplos de Gráficos Não-Efetivos
 
 ### Mapas de Calor: Vendo Apenas em Absoluto
 
-<center><img src="https://i0.wp.com/flowingdata.com/wp-content/uploads/2017/02/Absolutes.png?resize=768%2C567&amp;quality=100&amp;ssl=1" width="600px"/></center>
+<center><img src="https://i0.wp.com/flowingdata.com/wp-content/uploads/2017/02/Absolutes.png?resize=768%2C567&amp;quality=100&amp;ssl=1" width="400px"/></center>
 
 > ::: {align="center" style="font-size: 11px;"}
 > Figura 1 : Mapa de densidade populacional dos Estados Unidos. Fonte: Flowingdata.
 > :::
-
-<p>
-
-::: {align="justify" style="font-size: 12px;"}
-     Como editado em um artigo da Wikipédia, "um **mapa de calor** é uma técnica de visualização de dados que mostra a magnitude de um fenômeno por meio de cor em duas dimensões. A variação de cor pode ser por matiz ou intensidade, dando pistas visuais óbvias ao leitor sobre como o fenômeno está agrupado ou varia no espaço".
-:::
 
 <p>
 
@@ -144,11 +68,11 @@ DEST/UFPR
 
 <div align="justify" style="font-size: 12px;">
 
-     Abaixo, uma ilustração cômica compactando bem a inefetividade de mapas de calor para valores absolutos:
+     [Aqui](https://xkcd.com/1138/), uma ilustração cômica compactando bem a inefetividade de mapas de calor para valores absolutos.
 
 <p>
 
-<center><img src="https://imgs.xkcd.com/comics/heatmap.png" width="400px"/></center>
+<center><img src="https://imgs.xkcd.com/comics/heatmap.png" width="300px"/></center>
 
 > ::: {align="center" style="font-size: 11px;"}
 >      Figura 2: História em quadrinhos sobre mapas de calor. Fonte: xkcd.
@@ -157,28 +81,10 @@ DEST/UFPR
 <p>
 
 ::: {align="justify" style="font-size: 12px;"}
-     Na **figura 2**, o mapa do canto superior esquerdo representa os usuários de um site, o do canto superior direito os inscritos no *"Martha Stewart Living"*, e o último os consumidores de um certo tipo de pornografia. Entretanto, visualmente, os três mapas de calor são idênticos, como se fossem um mapa da densidade populacional dos EUA.
-:::
-
-<p>
-
-::: {align="justify" style="font-size: 12px;"}
      Como diz o texto da **figura 1**... **Vendo apenas em absolutos**: Isto é apenas população. Quando comparando entre lugares, categorias ou grupos, deve ser comparado de forma justa e considerar valores relativos
 :::
 
 ### Gráfico de Área Empilhada Concêntrica: Confundindo Dimensão e Formato de Áreas
-
-<center><img src="https://i0.wp.com/flowingdata.com/wp-content/uploads/2017/02/Area-dimensions.png?resize=768%2C284&amp;quality=100&amp;ssl=1" width="600px"/></center>
-
-> ::: {align="center" style="font-size: 11px;"}
-> Figura 3: Ilustração para indicar diferenças de representação de área através de proporção e formato adequados. Fonte Flowingdata.
-> :::
-
-<p>
-
-::: {align="justify" style="font-size: 12px;"}
-     Na **figura 3**, vê-se que ambos os retângulos completam a mesma quantidade de área, mas têm formatos muito diferentes.
-:::
 
 <p>
 
@@ -193,36 +99,6 @@ DEST/UFPR
 > ::: {align="center" style="font-size: 11px;"}
 > Figura 4: Gráfico de Área Empilhada Concêntrica do percentual de pessoas por faixa de gastos com mercado por semana. Fonte: Old Street Solutions.
 > :::
-
-<p>
-
-::: {align="justify" style="font-size: 12px;"}
-    Traduçao da **figura 4**:
-
-**Quanto você gasta em mercado por semana?**
-:::
-
-<p>
-
--   ::: {style="font-size: 12px;"}
-    22% abaixo de \$100
-    :::
-
--   ::: {style="font-size: 12px;"}
-    26% em torno de \$100
-    :::
-
--   ::: {style="font-size: 12px;"}
-    39% de \$100 a \$200
-    :::
-
--   ::: {style="font-size: 12px;"}
-    10% de \$200 a \$300
-    :::
-
--   ::: {style="font-size: 12px;"}
-    3% mais que \$300
-    :::
 
 <p>
 
@@ -250,7 +126,7 @@ legend("right", names(groceries), cex = 0.7, fill = colors)
 
 ### Gráfico de Eixos Duplos: Criando Ideia de Causalidade a Partir de Correlação
 
-<center><img src="https://i0.wp.com/flowingdata.com/wp-content/uploads/2017/02/Dual-axes.png?resize=768%2C410&amp;quality=100&amp;ssl=1" width="600px"/></center>
+<center><img src="https://i0.wp.com/flowingdata.com/wp-content/uploads/2017/02/Dual-axes.png?resize=768%2C410&amp;quality=100&amp;ssl=1" width="400px"/></center>
 
 > ::: {align="center" style="font-size: 11px;"}
 > Figura 6: Ilustração de Gráfico de Dois Eixos Verticais. Fonte: Flowingdata.
@@ -270,7 +146,7 @@ legend("right", names(groceries), cex = 0.7, fill = colors)
 
 <p>
 
-<center><img src="https://i0.wp.com/flowingdata.com/wp-content/uploads/2014/05/Divorce-rate-in-Maine-vs-margarine.png?w=703&amp;quality=100&amp;ssl=1" width="600px"/></center>
+<center><img src="https://i0.wp.com/flowingdata.com/wp-content/uploads/2014/05/Divorce-rate-in-Maine-vs-margarine.png?w=703&amp;quality=100&amp;ssl=1" width="400px"/></center>
 
 > ::: {align="center" style="font-size: 11px;"}
 > Figura 7: Taxa de divórcio a cada 1000 pessoas na cidade de Maine (EUA) se correlaciona com o consumo de libras *per capita* de margarina entre os anos 2000 e 2009. Fonte: Flowingdata.
