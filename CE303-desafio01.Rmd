@@ -1,6 +1,6 @@
 ---
 title: "Visualização de Dados Aplicada"
-author: "victorpietchaki"
+author: "victorpietchaki, eizosakai, biblang, Vitor-Pignatari"
 date: "2024-09-23"
 output:
   html_document: default
@@ -235,14 +235,26 @@ DEST/UFPR
 
 ::: {align="justify" style="font-size: 16px;"}
      Sobrepor áreas como esse gráfico torna desproporcional e gera deformação, impedindo uma visualização efetiva das informações. Uma escolha  garantida seria o gráfico de barras, que permite exibir claramente as diferenças entre cada categoria. Aleternativamente, se o foco for a proporção em relação ao todo, também é possível utilizar o gráfico de setores, considerando que não são muitas observações, e possuem diferenças notáveis entre cada uma.
+     
 :::
+```{r, echo=F, align="center"}
+groceries <- c("UNDER $100" = 22,"ABOUT $100" = 26,"$100 TO $200" = 39,"$200 TO $300" = 10,"MORE THAN $300" = 3)
+colors <- c("#93a4e6","#f2c62f", "#589da7","#f387cc","#b8402a")
+pie(groceries, clockwise = F, col = colors, labels = paste0(groceries,"%"), main = "HOW MUCH DO YOU SPEND ON GROCERIES EVERY WEEK?")
+legend("right", names(groceries), cex = 0.7, fill = colors)
+
+```
+
+> ::: {align="center" style="font-size: 14px;"}
+> Figura 5: Gráfico de setores apresentando os mesmos valores do gráfico da figura 4. Fonte: De autoria própria.
+> :::
 
 ### Gráfico de Eixos Duplos: Criando Ideia de Causalidade a Partir de Correlação
 
 <center><img src="https://i0.wp.com/flowingdata.com/wp-content/uploads/2017/02/Dual-axes.png?resize=768%2C410&amp;quality=100&amp;ssl=1" width="600px"/></center>
 
 > ::: {align="center" style="font-size: 14px;"}
-> Figura 5: Ilustração de Gráfico de Dois Eixos Verticais. Fonte: Flowingdata.
+> Figura 6: Ilustração de Gráfico de Dois Eixos Verticais. Fonte: Flowingdata.
 > :::
 
 <p>
@@ -262,7 +274,7 @@ DEST/UFPR
 <center><img src="https://i0.wp.com/flowingdata.com/wp-content/uploads/2014/05/Divorce-rate-in-Maine-vs-margarine.png?w=703&amp;quality=100&amp;ssl=1" width="600px"/></center>
 
 > ::: {align="center" style="font-size: 14px;"}
-> Figura 6: Taxa de divórcio a cada 1000 pessoas na cidade de Maine (EUA) se correlaciona com o consumo de libras *per capita* de margarina entre os anos 2000 e 2009. Fonte: Flowingdata.
+> Figura 7: Taxa de divórcio a cada 1000 pessoas na cidade de Maine (EUA) se correlaciona com o consumo de libras *per capita* de margarina entre os anos 2000 e 2009. Fonte: Flowingdata.
 > :::
 
 <p>
