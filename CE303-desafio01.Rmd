@@ -2,15 +2,16 @@
 title: "Visualização de Dados Aplicada"
 date: "2024-09-23"
 output:
-  pdf_document: default
+  word_document: default
   html_document: default
+  pdf_document: default
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
 <style>
-h2{margin-top: 40px, font-size: 18}
+h2{font-size: 18}
 </style>
 <p>
 
@@ -19,27 +20,7 @@ Alunos: Bianca Lang, João Victor Pietchaki Gonçalves, Lenardo Eizo Sakai, Vict
 :::
 
 ::: {align="right" style="font-size: 12px;"}
-João Victor Pietchaki Gonçalves <br> Lenardo Eizo Sakai <br> Victor Pignatari <br> Bianca Lang
-:::
-
-<p>
-
-::: {align="right" style="font-size: 12px;"}
-Prof. Dr. Anderson Ara
-:::
-
-::: {align="right" style="font-size: 12px;"}
 Desafio #01 - CM303
-:::
-
-::: {align="right" style="font-size: 12px;"}
-DEST/UFPR
-:::
-
-## Objetivos
-
-::: {align="justify" style="font-size: 12px;"}
-     Este artigo visa dar um panorama sobre o que é a efetividade em visualização de dados bem como relatar 3 tipos de gráficos não-efetivos.
 :::
 
 ## Exemplos de Gráficos Não-Efetivos
@@ -49,7 +30,7 @@ DEST/UFPR
 <center><img src="https://i0.wp.com/flowingdata.com/wp-content/uploads/2017/02/Absolutes.png?resize=768%2C567&amp;quality=100&amp;ssl=1" width="400px"/></center>
 
 > ::: {align="center" style="font-size: 11px;"}
-> Figura 1 : Mapa de densidade populacional dos Estados Unidos. Fonte: Flowingdata.
+>[ Figura 1](https://flowingdata.com/2017/02/09/how-to-spot-visualization-lies/) : Mapa de densidade populacional dos Estados Unidos. Fonte: Flowingdata.
 > :::
 
 <p>
@@ -72,14 +53,6 @@ DEST/UFPR
 
 <p>
 
-<center><img src="https://imgs.xkcd.com/comics/heatmap.png" width="300px"/></center>
-
-> ::: {align="center" style="font-size: 11px;"}
->      Figura 2: História em quadrinhos sobre mapas de calor. Fonte: xkcd.
-> :::
-
-<p>
-
 ::: {align="justify" style="font-size: 12px;"}
      Como diz o texto da **figura 1**... **Vendo apenas em absolutos**: Isto é apenas população. Quando comparando entre lugares, categorias ou grupos, deve ser comparado de forma justa e considerar valores relativos
 :::
@@ -97,13 +70,13 @@ DEST/UFPR
 <center><img src="https://www.oldstreetsolutions.com/wp-content/uploads/2021/05/Groceries-Weird-Chart.jpg" width="400px"/></center>
 
 > ::: {align="center" style="font-size: 11px;"}
-> Figura 4: Gráfico de Área Empilhada Concêntrica do percentual de pessoas por faixa de gastos com mercado por semana. Fonte: Old Street Solutions.
+> [Figura 2](https://www.oldstreetsolutions.com/good-and-bad-data-visualization): Gráfico de Área Empilhada Concêntrica do percentual de pessoas por faixa de gastos com mercado por semana. Fonte: Old Street Solutions.
 > :::
 
 <p>
 
 ::: {align="justify" style="font-size: 12px;"}
-     Neste tipo de gráfico, as áreas maiores são sobrepostas pelas áreas menores. Entretanto, essa sobreposição torna desproporcionais as áreas e os formatos, causando muita confusão. Neste exemplo, fica nítido que aqueles que gastam de \$100 a \$200 representam a maioria da população, mas não é o mesmo para aqueles que gastam em torno de \$100 e compõem o segundo maior grupo de pessoas. Ademais, a diferença entre as áreas amarela e azul é de apenas 4%, mas a azul aparenta ser muito maior. Não o bastante, esses 4% que de fato representam a cor amarela do gráfico aparentam ser muito maiores que o pequeno quadrado vermelho que representa 3% da população. Enfim, apenas um não para essa visualização!
+     Neste tipo de gráfico, as áreas maiores são sobrepostas pelas áreas menores. Entretanto, essa sobreposição torna desproporcionais as áreas e os formatos, causando muita confusão. Neste exemplo, fica nítido que aqueles que gastam de \$100 a \$200 representam a maioria da população, mas não é o mesmo para aqueles que gastam em torno de \$100 e compõem o segundo maior grupo de pessoas. Ademais, a diferença entre as áreas amarela e azul é de apenas 4%, mas a azul aparenta ser muito maior. Não o bastante, esses 4% que de fato representam a cor amarela do gráfico aparentam ser muito maiores que o pequeno quadrado vermelho que representa 3% da população. Enfim, apenas um "não" para essa visualização!
 :::
 
 <p>
@@ -121,7 +94,7 @@ legend("right", names(groceries), cex = 0.7, fill = colors)
 ```
 
 > ::: {align="center" style="font-size: 11px;"}
-> Figura 5: Gráfico de setores apresentando os mesmos valores do gráfico da figura 4. Fonte: De autoria própria.
+> Figura 3: Gráfico de setores apresentando os mesmos valores do gráfico da figura 4. Fonte: De autoria própria.
 > :::
 
 ### Gráfico de Eixos Duplos: Criando Ideia de Causalidade a Partir de Correlação
@@ -129,19 +102,19 @@ legend("right", names(groceries), cex = 0.7, fill = colors)
 <center><img src="https://i0.wp.com/flowingdata.com/wp-content/uploads/2017/02/Dual-axes.png?resize=768%2C410&amp;quality=100&amp;ssl=1" width="400px"/></center>
 
 > ::: {align="center" style="font-size: 11px;"}
-> Figura 6: Ilustração de Gráfico de Dois Eixos Verticais. Fonte: Flowingdata.
+> [Figura 4](https://flowingdata.com/2017/02/09/how-to-spot-visualization-lies/): Ilustração de Gráfico de Dois Eixos Verticais. Fonte: Flowingdata.
 > :::
 
 <p>
 
 ::: {align="justify" style="font-size: 12px;"}
-     Um gráfico de dois eixos verticais usa duas escalas diferentes e pode ser um argumento de causalidade forçada. Ao usar eixos duplos, a magnitude pode encolher ou expandir para cada métrica. Isso é feito tipicamente para implicar correlação e causalidade. “Por causa disso, essa outra coisa aconteceu. Veja, está claro.” Como não é senso comum que correlação não implica logicamente em causalidade e que a mera coincidência é tida por alguns como fonte para criação de teorias da conspiração, esse tipo de gráfico pode gerar confusão no sentido da integridade dos dados e da história a ser contada.
+     Um gráfico de dois eixos verticais usa duas escalas diferentes e pode ser um argumento de causalidade forçada. Ao usar eixos duplos, a magnitude pode encolher ou expandir para cada métrica. Isso é feito tipicamente para implicar correlação e causalidade. Como não é senso comum que correlação não implica logicamente em causalidade e que a mera coincidência é tida por alguns como fonte para criação de teorias da conspiração, esse tipo de gráfico pode gerar confusão no sentido da integridade dos dados e da história a ser contada.
 :::
 
 <p>
 
 ::: {align="justify" style="font-size: 12px;"}
-     O exemplo abaixo foi resultado de um projeto de identificação de correlações espúrias conduzido por Tyler Vigen (ele descobriu mais de 4000 correlações com dados dos EUA. Curiosidade inútil: muitas coisas se correlacionavam com o consumo de queijo lol)
+     O exemplo abaixo foi resultado de um projeto de identificação de correlações espúrias conduzido por Tyler Vigen.
 :::
 
 <p>
@@ -149,13 +122,13 @@ legend("right", names(groceries), cex = 0.7, fill = colors)
 <center><img src="https://i0.wp.com/flowingdata.com/wp-content/uploads/2014/05/Divorce-rate-in-Maine-vs-margarine.png?w=703&amp;quality=100&amp;ssl=1" width="400px"/></center>
 
 > ::: {align="center" style="font-size: 11px;"}
-> Figura 7: Taxa de divórcio a cada 1000 pessoas na cidade de Maine (EUA) se correlaciona com o consumo de libras *per capita* de margarina entre os anos 2000 e 2009. Fonte: Flowingdata.
+> [Figura 5](https://flowingdata.com/2014/05/12/random-things-that-correlate/): Taxa de divórcio a cada 1000 pessoas na cidade de Maine (EUA) se correlaciona com o consumo de libras *per capita* de margarina entre os anos 2000 e 2009. Fonte: Flowingdata.
 > :::
 
 <p>
 
 ::: {align="justify" style="font-size: 12px;"}
-     Este foi um dos resultados que Tyler Vigen encontrou ao escrever um programa de computador para identificar automaticamente coisas que se correlacionassem. Como pode ser visto, com o passar dos anos, o número de divórcios a cada 1000 pessoas diminui de forma proporcional ao consumo de margarina nos EUA (com índice de correlação de *Pearson* a 0.992558), indicando que estariam na mesma tendência. Entretanto, é verdade que quanto menos libras de margarina consumidas pela população dos EUA, menor a taxa de divórcio em uma cidade americana chamada Maine? Se ninguém mais nos EUA consumir margarina, então não existirá mais divórcios na respectiva cidade? Essas questões são possíveis de serem feitas a partir dessa visualização, entretanto, na realidade, sabemos que é uma mera coincidência!
+     Este foi um dos resultados que Tyler Vigen encontrou ao escrever um programa de computador para identificar automaticamente coisas que se correlacionassem. Como pode ser visto, com o passar dos anos, o número de divórcios a cada 1000 pessoas diminui de forma proporcional ao consumo de margarina nos EUA,  indicando que estariam na mesma tendência. Entretanto, se ninguém mais nos EUA consumir margarina, então não existirá mais divórcios na respectiva cidade? Essas questões são possíveis de serem feitas a partir dessa visualização, entretanto, na realidade, sabemos que é uma mera coincidência!
 :::
 
 <p>
@@ -177,35 +150,3 @@ legend("right", names(groceries), cex = 0.7, fill = colors)
 -   ::: {style="font-size: 12px;"}
     Exigir rigor científico para mostrar que há uma correlação forte e estatisticamente significativa.
     :::
-
-## Fontes
-
--   ::: {style="font-size: 12px;"}
-    YAU, Nathan. **How to spot visualization lies**. Disponível em: <https://flowingdata.com/2017/02/09/how-to-spot-visualization-lies/>. Acesso em: 22 set. 2024.
-    :::
-
--   ::: {style="font-size: 12px;"}
-    YAU, Nathan. **Random things that correlate**. Disponível em: <https://flowingdata.com/2014/05/12/random-things-that-correlate/>. Acesso em: 22 set. 2024.
-    :::
-
--   ::: {style="font-size: 12px;"}
-    FLETCHER, James. **Spurious correlations: Margarine linked to divorce?**. BBC News Magazine, 2014. Disponível em: <https://www.bbc.com/news/magazine-27537142>. Acesso em: 22 set. 2024.
-    :::
-
--   ::: {style="font-size: 12px;"}
-    XKCD. **Correlation**. Disponível em: <https://xkcd.com/1138/>. Acesso em: 22 set. 2024.
-    :::
-
--   ::: {style="font-size: 12px;"}
-    DUNFORD, Cristopher. **When Data Visualization Really Isn’t Useful (and When It Is)**. Disponível em: <https://www.oldstreetsolutions.com/good-and-bad-data-visualization>. Acesso em: 22 set. 2024.
-    :::
-
--   ::: {style="font-size: 12px;"}
-    WIKIPÉDIA. **Mapa de calor**. Disponível em: <https://pt.wikipedia.org/wiki/Mapa_de_calor>. Acesso em: 22 set. 2024.
-    :::
-
--   ::: {style="font-size: 12px;"}
-    ARA, Anderson. (2024). Visualizaçao de Dados Aplicada Slides 02 [Slides]. Universidade Federal do Paraná.
-    :::
-
-    <p>
