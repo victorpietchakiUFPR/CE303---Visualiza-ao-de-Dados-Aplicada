@@ -2,9 +2,9 @@
 title: "Visualização de Dados Aplicada"
 date: "2024-09-23"
 output:
+  pdf_document: default
   word_document: default
   html_document: default
-  pdf_document: default
 ---
 
 ```{r setup, include=FALSE}
@@ -16,7 +16,7 @@ h2{font-size: 18}
 <p>
 
 ::: {align="right" style="font-size: 12px;"}
-Alunos: Bianca Lang, João Victor Pietchaki Gonçalves, Lenardo Eizo Sakai, Victor Pignatari <br> 
+Alunos: Bianca Lang, João Victor Pietchaki Gonçalves, Lenardo Eizo Sakai, Vitor Gabril Pignatari <br> 
 :::
 
 ::: {align="right" style="font-size: 12px;"}
