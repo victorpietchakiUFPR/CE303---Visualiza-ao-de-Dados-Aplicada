@@ -20,7 +20,7 @@ Alunos: Bianca Lang, João Victor Pietchaki Gonçalves, Lenardo Eizo Sakai, Vito
 :::
 
 ::: {align="right" style="font-size: 12px;"}
-Desafio #01 - CM303
+Desafio #01 - CE303 - Prof. Dr. Anderson Ara - DEST/UFPR - 2024/2
 :::
 
 ## Exemplos de Gráficos Não-Efetivos
