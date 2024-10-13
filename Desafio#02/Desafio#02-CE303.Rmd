@@ -1,6 +1,8 @@
 ---
 title: "Desafio #02 - CE302 Visualização de Dados Aplicada"
-output: html_document
+output:
+  pdf_document: default
+  html_document: default
 date: "2024-10-14"
 ---
 
@@ -8,39 +10,84 @@ date: "2024-10-14"
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-Alunos:
+<style>
+h1{font-size: 14}
+h2{font-size: 12}
+h3{font-size: 11}
+</style>
+
+<p>
+::: {align="right" style="font-size: 10px;"}
 Alunos: João Victor Pietchaki Gonçalves, Lenardo Eizo Sakai
+:::
+::: {align="right" style="font-size: 10px;"}
+Desafio #02 - CE303 - Prof. Dr. Anderson Ara - DEST/UFPR - 2024/2
+:::
 
-## Objetivos
-Como atividade complementar a disciplina de Visualizaçao de Dados Aplicada, apresentar-vos-emos um grafico nao visto em sala de aula. Discutiremos sobre o Grafico de Funil e faremos um exemplo com um conjunto de dados extraido da web.
+## O que é o **Gráfico de Funil?**
+<p>
+::: {align="justify" style="font-size: 10px;"}
+     Simples mas efetivo, esse o **Gráfico de Funil** se tornou famoso dentro do marketing digital para representar dados de funis de vendas. Afinal, um gráfico de funil é usado para mostrar dados de fluxo linear, onde cada fatia no funil representa um processo que filtrou dados. Ao visualizar o número de usuários que chegam a cada estágio do processo, uma empresa pode entender onde há quedas significativas e tentar fazer mudanças na experiência do usuário para melhor. A última etapa do funil contém o valor que é o resultado final de todo o procedimento.
+::: 
 
-## O que é o *Grafico de Funil?*
-Simples mas efetivo, esse o *Gráfico de Funil* se tornou famoso dentro do marketing digital para representar dados de funis de vendas. Afinal, um gráfico de funil é usado para mostrar dados de fluxo linear, onde cada fatia no funil representa um processo que filtrou dados. O último funil contém o valor que é o resultado final de todo o procedimento.
+<p>
+::: {align="justify" style="font-size: 10px;"}
+     Idealmente, o gráfico de funil mostra um processo que começa em 100% e termina com uma porcentagem menor, onde é perceptível em quais estágios a queda acontece e em que taxa.
+::: 
 
-Um gráfico de funil exibe valores como proporções progressivamente decrescentes, totalizando 100 por cento no total. O tamanho da área é determinado pelo valor da série como uma porcentagem do total da soma de todos os valores. Qualquer funil consiste na parte superior chamada cabeça (ou base) e na parte inferior chamada pescoço.
-
-Idealmente, o gráfico de funil mostra um processo que começa em 100% e termina com uma porcentagem menor, onde é perceptível em quais estágios a queda acontece e em que taxa. Se o gráfico também for combinado com dados de pesquisa, ou seja, medições quantificadas de quantos itens são perdidos em cada etapa do processo de vendas ou atendimento de pedidos, então o gráfico de funil ilustra onde estão os maiores gargalos no processo.
-
-## Quando utilizar o *Grafico de Funil?*
-Os gráficos de funil são mais frequentemente vistos em contextos de negócios ou vendas, onde precisamos rastrear como um conjunto inicial de visitantes ou usuários abandona um processo ou fluxo. Este tipo de gráfico mostra como o todo inicial se divide em partes progressivas.
-
-Ao visualizar o número de usuários que chegam a cada estágio do processo, uma empresa pode entender onde há quedas significativas e tentar fazer mudanças na experiência do usuário para melhor. Observe que não haverá detalhes suficientes em um gráfico de funil para dizer por que uma queda inesperada ocorreu, então os funis são melhor usados ​​como uma visualização de alto nível antes de passar para uma investigação mais profunda.
-
-## Melhores Praticas
-+ Mantenha o espaçamento consistente entre os estágios
-+ Combine os rótulos com os locais de medição
-+ Use um gráfico de funil em estilo de barra
+<p>
+::: {align="justify" style="font-size: 10px;"}
+      Observe que não haverá detalhes suficientes em um gráfico de funil para dizer por que uma queda inesperada ocorreu, então os funis são melhor usados como uma visualização de alto nível antes de passar para uma investigação mais profunda.
+::: 
 
 ## Exemplo Prático
 ```{r}
+# Define a base de dados
 quantidade <- c(600,470,380,300,200,100)
+
+# Realiza a soma dos valores da base de dados
+quantidade_total <- sum(quantidade)
+
+# Calcula o percentual do total para cada valor das etapas do funil
+quantidade_percent <- c(rep(0, length(quantidade)))
+quantidade_percent <- round(quantidade / quantidade[1], 3)
+quantidade_percent_str <- paste(round((quantidade_percent * 100), 0), "%") # transforma o vetor numérico em vetor de strings
+
+# Calcula a taxa de conversao de cada etapa do funil
+quantidade_conversion <- c(rep(0, length(quantidade)))
+for (i in 1:length(quantidade)){
+  if (i > 1){
+    quantidade_conversion[i] <- round(quantidade[i] / quantidade[i - 1], 3)
+  }else if (i == 1){
+    quantidade_conversion[i] <- round(quantidade[i] / quantidade[i], 3)
+  }
+}
+quantidade_conversion_str <- paste(round((quantidade_conversion * 100), 0), "%") # transforma o vetor numérico em vetor de strings
+
+# Cria um grafico de funil usando uma adaptaçao do grafico de barras (barplot)
 title <- factor(c("Prospects","Leads","Análise","Contatos","Negociações","Vendas"), ordered = F)
 quantidade <- setNames(quantidade, title)
-
-barplot(rbind(sort(quantidade,decreasing = F),sort(-quantidade*2,decreasing = T)),
-        horiz = T,
-        xlim = c(-650,650),
+barplot(height = rbind(sort(quantidade,decreasing = F),sort(-quantidade*2,decreasing = T)),
+        width = 3,
+        space = 0.15, # Espaço entre as barras
+        horiz = TRUE,
+        # legend.text = TRUE,
+        # names.arg = title,
+        col = "white",
+        las  = 1, # Deixa os rótulos na horizontal
+        border = TRUE,
+        main = "Funil de Vendas",
+        sub = "Etapa do Funil de Vendas x Qtd. Pessoas x Conversão",
+        xlim = c(-800,800), # Define o limite do eixo X para encaixar as barras
+        cex.names = 0.8,  # Tamanho dos nomes
+        cex.main = 1.5,  # Tamanho do título
+        xpd = TRUE,
         axes = F)
+
+# Adicionar os números nas barras
+text(x = c(-50, -50, -50, -50, -50, -50), y = c(19, 15.75, 12.25, 8.75, 5.5, 2), labels = quantidade, pos = 4, col = "black", cex = 0.8)
+text(x = c(670, 670, 670, 670, 670, 670), y = c(19, 15.5, 12, 8.5, 5.5, 2), labels = quantidade_conversion_str, pos = 4, col = "black", cex = 0.8)
+
 
 ```
 
@@ -48,7 +95,8 @@ barplot(rbind(sort(quantidade,decreasing = F),sort(-quantidade*2,decreasing = T)
 
 
 ## Fontes
-
-+ https://datavizproject.com/data-type/funnel-chart/
-+ https://www.atlassian.com/data/charts/funnel-chart-complete-guide
-+ https://www.kaggle.com/code/mpwolke/funnel-analysis/notebook
+::: {align="justify" style="font-size: 10px;"}
++ ATLASSIAN. Funnel chart: complete guide. Disponível em: https://www.atlassian.com/data/charts/funnel-chart-complete-guide. Acesso em: 13 out. 2024.
++ DATA VIZ PROJECT. Funnel chart. Disponível em: https://datavizproject.com/data-type/funnel-chart/. Acesso em: 13 out. 2024.
++ WOLKE, M. Funnel analysis. Kaggle, [s.d.]. Disponível em: https://www.kaggle.com/code/mpwolke/funnel-analysis/notebook. Acesso em: 13 out. 2024.
+:::
