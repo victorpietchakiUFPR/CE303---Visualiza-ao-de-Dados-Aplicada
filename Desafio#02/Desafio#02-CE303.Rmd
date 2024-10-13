@@ -31,6 +31,20 @@ Ao visualizar o número de usuários que chegam a cada estágio do processo, uma
 + Combine os rótulos com os locais de medição
 + Use um gráfico de funil em estilo de barra
 
+## Exemplo Prático
+```{r}
+quantidade <- c(600,470,380,300,200,100)
+title <- factor(c("Prospects","Leads","Análise","Contatos","Negociações","Vendas"), ordered = F)
+quantidade <- setNames(quantidade, title)
+
+barplot(rbind(sort(quantidade,decreasing = F),sort(-quantidade*2,decreasing = T)),
+        horiz = T,
+        xlim = c(-650,650),
+        axes = F)
+
+```
+
+
 
 
 ## Fontes
