@@ -91,9 +91,36 @@ text(x = c(670, 670, 670, 670, 670, 670), y = c(19, 15.5, 12, 8.5, 5.5, 2), labe
 
 ```
 
+## Exemplo 2
+
+```{r, fig.align="center"}
+# Define os fatores
+nome <- factor(c("Prospects","Leads","Análise","Contatos","Negociações","Vendas"), ordered = T)
+# Define a base de dados
+quantidade <- setNames(c(600,470,380,300,200,100), nome)
+
+par(mar = c(1,7,3,1))
+
+# Cria um gráfico de funil a partir de um gráfico de barras empillhadas
+p <- barplot(rbind(sort(quantidade),sort(-quantidade*2, decreasing = T)),
+        horiz = T,
+        xlim = c(-650,650),
+        axes = F,
+        space = .5,
+        las=2,
+        main = "Funil de Vendas")
+
+# Adiciona os valores nas barras
+text(sort(quantidade), y = p, x = 0)
+# Adiciona a taxa de conversão entre as  barras
+text(paste0(100*round(quantidade[2:6]/(quantidade[1:5]),2),"%"), y = p[6:2]-.75, x = 0, cex=.8)
+# Adiciona as linhas entre as barras
+segments(quantidade[1:5], p[6:2]-.5, quantidade[2:6], p[5:1]+.5)
+segments(-quantidade[1:5], p[6:2]-.5, -quantidade[2:6], p[5:1]+.5)
+```
 
 
-
+\pagebreak
 ## Fontes
 ::: {align="justify" style="font-size: 10px;"}
 + ATLASSIAN. Funnel chart: complete guide. Disponível em: https://www.atlassian.com/data/charts/funnel-chart-complete-guide. Acesso em: 13 out. 2024.
