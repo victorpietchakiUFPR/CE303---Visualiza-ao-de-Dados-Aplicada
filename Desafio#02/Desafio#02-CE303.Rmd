@@ -41,65 +41,16 @@ Desafio #02 - CE303 - Prof. Dr. Anderson Ara - DEST/UFPR - 2024/2
 ::: 
 
 ## Exemplo Prático
-```{r}
-# Define a base de dados
-quantidade <- c(600,470,380,300,200,100)
-
-# Realiza a soma dos valores da base de dados
-quantidade_total <- sum(quantidade)
-
-# Calcula o percentual do total para cada valor das etapas do funil
-quantidade_percent <- c(rep(0, length(quantidade)))
-quantidade_percent <- round(quantidade / quantidade[1], 3)
-quantidade_percent_str <- paste(round((quantidade_percent * 100), 0), "%") # transforma o vetor numérico em vetor de strings
-
-# Calcula a taxa de conversao de cada etapa do funil
-quantidade_conversion <- c(rep(0, length(quantidade)))
-for (i in 1:length(quantidade)){
-  if (i > 1){
-    quantidade_conversion[i] <- round(quantidade[i] / quantidade[i - 1], 3)
-  }else if (i == 1){
-    quantidade_conversion[i] <- round(quantidade[i] / quantidade[i], 3)
-  }
-}
-quantidade_conversion_str <- paste(round((quantidade_conversion * 100), 0), "%") # transforma o vetor numérico em vetor de strings
-
-# Cria um grafico de funil usando uma adaptaçao do grafico de barras (barplot)
-title <- factor(c("Prospects","Leads","Análise","Contatos","Negociações","Vendas"), ordered = F)
-quantidade <- setNames(quantidade, title)
-barplot(height = rbind(sort(quantidade,decreasing = F),sort(-quantidade*2,decreasing = T)),
-        width = 3,
-        space = 0.15, # Espaço entre as barras
-        horiz = TRUE,
-        # legend.text = TRUE,
-        # names.arg = title,
-        col = "white",
-        las  = 1, # Deixa os rótulos na horizontal
-        border = TRUE,
-        main = "Funil de Vendas",
-        sub = "Etapa do Funil de Vendas x Qtd. Pessoas x Conversão",
-        xlim = c(-800,800), # Define o limite do eixo X para encaixar as barras
-        cex.names = 0.8,  # Tamanho dos nomes
-        cex.main = 1.5,  # Tamanho do título
-        xpd = TRUE,
-        axes = F)
-
-# Adicionar os números nas barras
-text(x = c(-50, -50, -50, -50, -50, -50), y = c(19, 15.75, 12.25, 8.75, 5.5, 2), labels = quantidade, pos = 4, col = "black", cex = 0.8)
-text(x = c(670, 670, 670, 670, 670, 670), y = c(19, 15.5, 12, 8.5, 5.5, 2), labels = quantidade_conversion_str, pos = 4, col = "black", cex = 0.8)
-
-
-```
-
-## Exemplo 2
 
 ```{r, fig.align="center"}
 # Define os fatores
 nome <- factor(c("Prospects","Leads","Análise","Contatos","Negociações","Vendas"), ordered = T)
-# Define a base de dados
-quantidade <- setNames(c(600,470,380,300,200,100), nome)
 
-par(mar = c(1,7,3,1))
+# Define a base de dados
+quantidade <- setNames(c(600,370,300,280,150,50), nome)
+
+# D
+par(mar = c(5,7,3,1)) 
 
 # Cria um gráfico de funil a partir de um gráfico de barras empillhadas
 p <- barplot(rbind(sort(quantidade),sort(-quantidade*2, decreasing = T)),
@@ -108,17 +59,24 @@ p <- barplot(rbind(sort(quantidade),sort(-quantidade*2, decreasing = T)),
         axes = F,
         space = .5,
         las=2,
-        main = "Funil de Vendas")
+        main = "Funil de Vendas",
+        sub = "Etapas x Qtd. x Conversão",
+        col = quantidade)
 
 # Adiciona os valores nas barras
 text(sort(quantidade), y = p, x = 0)
+
 # Adiciona a taxa de conversão entre as  barras
 text(paste0(100*round(quantidade[2:6]/(quantidade[1:5]),2),"%"), y = p[6:2]-.75, x = 0, cex=.8)
+
 # Adiciona as linhas entre as barras
 segments(quantidade[1:5], p[6:2]-.5, quantidade[2:6], p[5:1]+.5)
 segments(-quantidade[1:5], p[6:2]-.5, -quantidade[2:6], p[5:1]+.5)
 ```
 
+::: {align="justify" style="font-size: 10px;"}
+    Interpretação do gráfico: A taxa de conversão entre cada etapa representa a eficiência dos processos realizados em cada etapa. Para este conjunto de dados, observa-se que a etapa 'vendas' é a de menor eficácia ao passo que a etapa 'contatos' é a mais eficiente. Quando aliado a metas de conversão de cada etapa, a análise torna-se mais rica. Além do mais, a taxa de conversão final para este funil foi de 16.7%
+:::
 
 \pagebreak
 ## Fontes
