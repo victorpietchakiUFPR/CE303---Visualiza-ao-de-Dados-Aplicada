@@ -1,0 +1,34 @@
+---
+title: "P#01 - CE303 Visualização de Dados Aplicada - DEST/UFPR"
+author: "João Victor Pietchaki Gonçalves"
+date: "2024-10-27"
+output:
+  pdf_document: default
+  html_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+## Prova 1
+
+- **Ferramenta utilizada para a criação das visualizações:** Power BI  
+- **Ferramenta utilizada para integração do design:** Figma  
+- **Fonte de Dados:** disponível em meu GitHub acadêmico (segue abaixo)  
+
+No meu GitHub acadêmico, disponibilizo todos os arquivos utilizados para a realização desta avaliação. Incluem:
+
+- Arquivo do Power BI;  
+- Excel com dados;  
+- Arquivos PDF e JPG do resultado final.
+
+
+O convite para visualizar o arquivo no Figma foi enviado para o professor via e-mail: `ara@ufpr.br`
+
+**Link do repositório no GitHub**:
+
++ [https://github.com/victorpietchakiUFPR/CE303---Visualiza-ao-de-Dados-Aplicada/tree/main/P%2301](https://github.com/victorpietchakiUFPR/CE303---Visualiza-ao-de-Dados-Aplicada/tree/main/P%2301)
+
+Quaisquer eventuais imprevistos, não hesite em contatar-me via `joaovictorpiet@gmail.com` ou `victorpietchaki@ufpr.br`
