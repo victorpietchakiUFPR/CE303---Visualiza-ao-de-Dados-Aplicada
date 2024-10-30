@@ -84,4 +84,5 @@ segments(-quantidade[1:5], p[6:2]-.5, -quantidade[2:6], p[5:1]+.5)
 + ATLASSIAN. Funnel chart: complete guide. Disponível em: https://www.atlassian.com/data/charts/funnel-chart-complete-guide. Acesso em: 13 out. 2024.
 + DATA VIZ PROJECT. Funnel chart. Disponível em: https://datavizproject.com/data-type/funnel-chart/. Acesso em: 13 out. 2024.
 + WOLKE, M. Funnel analysis. Kaggle, [s.d.]. Disponível em: https://www.kaggle.com/code/mpwolke/funnel-analysis/notebook. Acesso em: 13 out. 2024.
++ Done.
 :::
