@@ -1,0 +1,57 @@
+PAGINA 1
+
+* Indicadores-chave: (cards)
+- mortalidade infantil
+- mortalidade bruta
+- esperança de vida ao nascer
+- taxa de envelhecimento
+- idhm de longevidade (indicador-ouro)
+
+* Mapa geográfico (idhm longevidade - UF)
+
+* Time-series (um para cada indicadores-chave - UF) - uma linha para a regiao sul e outra para as outras
+
+* Tabela ranking de UF por esperança de vida ao nascer
+(adicionar a região geográfico como sendo tbm uma dimensao)
+
+
+PAGINA 2 (DRILLDOWN)
+* Treemap (Principais causas de mortalidade)
+
+* Mapa geografico (Geografia da saude mental - ou mais generalizadamente - Geografia da mortalidade)
+
+* taxa de mortalidade infantil VS % de nascidos vivos com consultas pré-natais adequadas
+
+* Impacto da adesao a plano de saude por tipo de mortalidade
+
+------------------------------------------------------------------------------------------------------------------------
+Possíveis Análises com os Dados:
+Comparação entre estados:
+
+Como os estados se comparam em termos de expectativa de vida e mortalidade infantil?
+Quais estados possuem maiores e menores taxas de envelhecimento?
+Como o IDHM de longevidade se correlaciona com as taxas de mortalidade e expectativa de vida? **************** FAZER
+Tendências Temporais:
+
+Como esses indicadores evoluíram ao longo do tempo? Existe algum estado com melhorias significativas na mortalidade infantil ou aumento na expectativa de vida?
+Correlação entre indicadores:
+
+Analisar como a taxa de envelhecimento e a mortalidade infantil se relacionam com a expectativa de vida e a taxa de mortalidade.
+------------------------------------------------------------------------------------------------------------------------
+
+
+FILTROS:
+* ano
+* região
+
+
+DADOS:
+1 pivotar - tirar os anos de cada coluna e coloca-los linha a linha.
+1 tabela - UF/município x ano x tipos de mortalidade x taxa
+	   UF/município x ano x % nascidos vivos com consultas pré-natal adequadas
+	   UF/município x ano % pessoas cobertas com plano de saúde suplementar
+1 tabela - UF x ano x IDHM_longevidade x taxa_envelhecimento x mortalidade_infantil x espranca_vida_ao_nascer x taxa_bruta_mortalidade
+
+2 Carregar os dados no PBI via R.
+
+3 Criar os graficos
