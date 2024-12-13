@@ -14,5 +14,5 @@ files_names <- c("tipos_mortalidade_MUN.RData", "tipos_mortalidade_REGIAO_SUL.RD
 
 # Carrega arquivos
 for (i in 1:length(files_names)) {
-  load(paste0(root_path, "/data/clean_data/", files_names[i]))
+  load(paste0(root_path, "../../data/clean_data/", files_names[i]))
 }

@@ -1,0 +1,221 @@
+---
+title: "Tableau"
+author:
+  - name: Ana Beatriz da Silva Maques
+    email: ana.bia@ufpr.br
+    affiliation: 
+      - name: Universidade Federal do Paraná
+        city: Curitiba
+        state: PR
+  - name: João Victor Pietchaki
+    email: victorpietchaki@ufpr.br
+  - name: Leonardo Eizo Sakai
+    email: eizo.sakai@ufpr.br
+  - name: Victor Pignatari
+    email: vitor.pignatari@ufpr.br
+        
+lang: pt
+csl: https://raw.githubusercontent.com/citation-style-language/styles/master/apa.csl
+code-fold: show 
+code-line-numbers: FALSE
+format: 
+  pdf: default
+toc: true
+toc-depth: 5
+toc-title: "Agenda"
+number-sections: true
+---
+
+## Introdução
+
+Para o último desafio (4) da disciplina “CE303 - Visualização de Dados Aplicada”, apresentaremos o Tableau, ferramenta que não foi apresentado no decorrer da disciplina.
+
+O Tableau é uma ferramenta de Visualização de Dados voltada para Business Intelligence.
+
+Objetivo do Relatório: Apresentar o Tableau como uma ferramenta para criação de dashboards e análise de dados, abordando seus principais recursos, vantagens e aplicações práticas. Contexto: Importância de ferramentas de visualização no processo de tomada de decisão baseada em dados.
+
+## O que é Tableau?
+
+A Tableau, fundada em 2003 por Chris Stolte, Pat Hanrahan e Christian Chabot na Universidade Stanford, desenvolveu o VizQL, uma tecnologia que traduz ações intuitivas em consultas de dados visuais. A empresa foca em pesquisa e desenvolvimento, integrando aprendizado de máquina, estatística e preparação de dados para facilitar análises criativas e rápidas. Além de oferecer uma plataforma completa de análise, a Tableau promove uma cultura de dados nas organizações para impulsionar inovação, produtividade e decisões mais assertivas pelos departamentos das organizações.. Também criou uma comunidade para apoiar profissionais na jornada de aprimoramento e networking.
+
+Tableau é uma poderosa e flexível ferramenta focada na gestão e análise de dados. Primeiramente, ela permite a integração dos dados a partir de múltiplas fontes. Depois, ela facilita a criação de dashboards interativos e estéticos que podem ser compartilhados com outros usuários. Por último, é acessível para qualquer tipo de profissional: a interface intuitiva do Tableau é desenhada tanto para profissionais técnicos e não-técnicos.
+
+## Recursos principais do Tableau
+
+O tableau é composto por cinco componentes chave, cada um com um escopo diferente:
+
+-   **Tableau Desktop**: uma aplicação desktop permite aos usuários coletar, transformar e visualizar dados. O Tableau Desktop está disponível apenas sob inscrição. As visualizações podem ser salvas tanto localmente quanto de forma remota.
+
+-   **Tableau Public**: a versão gratuita do software Tableau tras a maioria das funcionalidades da versão Desktop. Ao contrário do Tableau Desktop, ele só pode acomodar arquivos CSV, Excel e texto. Há também um limite de 15 milhões de linhas de dados e qualquer trabalho que você fizer não pode ser salvo localmente - apenas no Tableau Server.
+
+-   **Tableau Reader**:  Um aplicativo somente de leitura para abrir e ler tipos de arquivo do Tableau.
+
+-   **Tableau Online**  —  Uma versão em nuvem do Software Tableau que providencia uma forma para publicar e compartilhar dashboards de forma remota. É 100% hospedado pelo Tableau.
+
+-   **Tableau Server** — da mesma forma que o Tableau Online, ele permite que usuários hospedem e armazenem visualizações de dados criados com Tableau. A diferença para o Tableau Online é que ele não é 100% hospedado pelo Tableau, mas se divide em plataformas públicas na nuvem como AWS, Google Cloud Platforma e Microsoft Azure.
+
+Para mais informaçoes sobre como construir uma visualização básica para explorar seus dados você pode acessar o [tutorial para exploração de dados](https://help.tableau.com/current/pro/desktop/en-us/getstarted_buildmanual_ex1basic.htm).
+
+Além disso, o Tableau permite integrar o seu relatorio com diversas fontes de dados, tais como:
+
+-   [Microsoft Excel](https://help.tableau.com/current/pro/desktop/pt-br/examples_excel.htm), [Arquivo de texto](https://help.tableau.com/current/pro/desktop/pt-br/examples_text.htm), [Microsoft Access](https://help.tableau.com/current/pro/desktop/pt-br/examples_access.htm), [Arquivo JSON](https://help.tableau.com/current/pro/desktop/pt-br/examples_json.htm), [Arquivo PDF](https://help.tableau.com/current/pro/desktop/pt-br/examples_pdf.htm), [Arquivo espacial](https://help.tableau.com/current/pro/desktop/pt-br/examples_spatial_files.htm), [Arquivo de estatística](https://help.tableau.com/current/pro/desktop/pt-br/examples_statfile.htm), [Tableau Server ou Tableau Cloud](https://help.tableau.com/current/pro/desktop/pt-br/examples_tableauserver.htm), [Amazon Athena](https://help.tableau.com/current/pro/desktop/pt-br/examples_amazonathena.htm), [Amazon Redshift](https://help.tableau.com/current/pro/desktop/pt-br/examples_amazonredshift.htm), [Amazon S3](https://help.tableau.com/current/pro/desktop/pt-br/examples_amazons3.htm), [Anaplan](https://help.tableau.com/current/pro/desktop/pt-br/examples_anaplan.htm), [Apache Drill](https://help.tableau.com/current/pro/desktop/pt-br/examples_apachedrill.htm), [Azure Data Lake Storage Gen2](https://help.tableau.com/current/pro/desktop/pt-br/examples_azure_data_lake_gen2.htm), [Banco de dados SQL do Azure](https://help.tableau.com/current/pro/desktop/pt-br/examples_azure_sql_database.htm), [Databricks](https://help.tableau.com/current/pro/desktop/pt-br/examples_databricks.htm), [Dropbox](https://help.tableau.com/current/pro/desktop/pt-br/examples_dropbox.htm), [Google Analytics](https://help.tableau.com/current/pro/desktop/pt-br/examples_googleanalytics.htm), [Google BigQuery](https://help.tableau.com/current/pro/desktop/pt-br/examples_googlebigquery.htm), [Planilhas Google](https://help.tableau.com/current/pro/desktop/pt-br/examples_googlesheets.htm), [Hortonworks Hadoop Hive](https://help.tableau.com/current/pro/desktop/pt-br/examples_hortonworkshadoop.htm), [IBM](https://help.tableau.com/current/pro/desktop/pt-br/___)[MariaDB](https://help.tableau.com/current/pro/desktop/pt-br/examples_mariadb.htm), [MySQL](https://help.tableau.com/current/pro/desktop/pt-br/examples_mysql.htm), [PostgreSQL](https://help.tableau.com/current/pro/desktop/pt-br/examples_postgresql.htm), etc.
+
+## [Criando uma visualizaçao basica com o Tableau:](https://help.tableau.com/current/pro/desktop/en-us/getstarted_buildmanual_ex1basic.htm)
+
+Ná página inicial do Tableau, abaixo do campo “Connect”, selecione o aplicativo Microsoft Excel e na caixa de diálogo, procure pela opção “Sample - Superstore” do seu arquivo no excel. Vá para “/Documents/ My Tableau Repository/datasources/version number/ \[language\]. Selecione a opção “Sample - Superstore” e selecione “Open”.
+
+Após conectar sua base de dados ao aplicativo, a página mostrará
+
+![](https://help.tableau.com/current/pro/desktop/en-us/Img/gs_connect8.png){fig-align="center" width="400"}
+
+Na planilha, as colunas da sua fonte de dados são mostradas como campos no lado esquerdo no painel Dados . O painel Dados contém uma variedade de campos organizados por tabela. Para cada tabela ou pasta em uma fonte de dados, os campos de dimensão aparecem acima da linha cinza e os campos de medida aparecem abaixo da linha cinza. Os campos de dimensão geralmente contêm dados categóricos, como tipos de produtos e datas, enquanto os campos de medida contêm dados numéricos, como vendas e lucro. Às vezes, uma tabela ou pasta conterá apenas dimensões ou apenas medidas para começar. Para obter mais informações, consulte Dimensões e medidas, azul e verde .
+
+![](https://help.tableau.com/current/pro/desktop/en-us/Img/schema3.png){fig-align="center" width="150"}
+
+Para criar uma visualização, você adiciona campos do painel Dados . Você pode fazer isso de diferentes maneiras.
+
+Por exemplo:
+
+Arraste campos do painel Dados e solte-os nos cartões e prateleiras que fazem parte de cada planilha do Tableau.
+
+Clique duas vezes em um ou mais campos no painel Dados .
+
+Selecione um ou mais campos no painel Dados e, em seguida, escolha um tipo de gráfico em Mostrar-me , que identifica os tipos de gráfico apropriados para os campos selecionados. Para obter detalhes, consulte Usar Mostrar-me para iniciar uma exibição .
+
+Para começar a criar uma visualização tabular, solte um campo na grade Soltar campo aqui .
+
+![](https://help.tableau.com/current/pro/desktop/en-us/Img/dropFieldHere.png){fig-align="center"}
+
+Estas etapas mostram como criar uma visualização básica que mostre o lucro ano a ano.
+
+Na área Dimensões no painel Dados , arraste o campo Data do Pedido para a prateleira Colunas . Talvez seja necessário expandir a hierarquia do Pedido para ver a Data do Pedido.
+
+Quando você arrasta um campo sobre uma prateleira, um sinal de mais indica que a prateleira pode aceitar o campo.
+
+![](https://help.tableau.com/current/pro/desktop/en-us/Img/example1a.png){fig-align="center" width="400"}
+
+A tabela resultante tem quatro colunas e uma linha. Cada cabeçalho de coluna representa um membro do campo Order Date (o nível de data padrão é YEAR). Cada célula contém um marcador de posição “Abc”, que indica que o tipo de marca atual para esta visualização é texto.
+
+![](https://help.tableau.com/current/pro/desktop/en-us/Img/Example_1b.png){width="200"}
+
+Observe que o campo está colorido em azul, o que indica que ele é discreto . Para obter mais informações, consulte Dimensões e Medidas, Azul e Verde .
+
+O nível de data padrão é determinado pelo nível mais alto que contém mais de um valor distinto (por exemplo, vários anos e vários meses). Isso significa que se \[Data do pedido\] contivesse dados de apenas um ano, mas tivesse vários meses, o nível padrão seria mês. Você pode alterar o nível de data usando o menu de campo.
+
+![](https://help.tableau.com/current/pro/desktop/en-us/Img/Example_1c.png){width="250"}
+
+O primeiro conjunto de opções usa partes de data (rótulos discretos, então "maio" é o mesmo valor, seja de 2024 ou 2034) e o segundo conjunto de opções usa truncamentos de data (valores contínuos, então maio de 2024 é um valor diferente de maio de 2034). Para obter mais informações, consulte Alterar níveis de data.
+
+No painel Dados , arraste o campo Lucro para a divisória Linhas .
+
+![](https://help.tableau.com/current/pro/desktop/en-us/Img/Example_1d.png){fig-align="center" width="400"}
+
+O campo Profit é colorido de verde na prateleira Rows , indicando que é contínuo. Além disso, o nome do campo muda para SUM(Profit) . Isso ocorre porque as medidas são agregadas automaticamente quando você as adiciona à exibição, e a agregação padrão para essa medida é SUM. Para obter mais informações sobre o que acontece quando você adiciona uma medida a uma exibição — e por quê — consulte Dimensões e medidas, azul e verde .
+
+O Tableau transforma a tabela em um gráfico de linhas e cria um eixo vertical (ao longo do lado esquerdo) para a medida.
+
+Um gráfico de linhas é uma ótima maneira de comparar dados ao longo do tempo e identificar tendências de forma eficaz.
+
+Este gráfico de linhas mostra o lucro ao longo do tempo. Cada ponto ao longo da linha mostra a soma do lucro do ano correspondente.
+
+![](https://help.tableau.com/current/pro/desktop/en-us/Img/Example_1e.png){fig-align="center" width="200"}
+
+![](https://help.tableau.com/current/pro/desktop/en-us/Img/example2a.png){fig-align="center"}
+
+O próximo passo é aprofundar um pouco mais na dimensão do tempo.
+
+Esta etapa mostra como você pode modificar a visualização para mostrar trimestres além de anos. Conforme você aprofunda na hierarquia, a visualização muda para se tornar uma tabela aninhada.
+
+Você pode mostrar \[Data do pedido\] por trimestres usando um dos seguintes métodos:
+
+Clique no botão de adição no lado esquerdo do campo ANO(Data do pedido) em Colunas.
+
+Arraste o campo Data do pedido (novamente) do painel Dados e solte-o na divisória Colunas à direita de Ano(Data do pedido) .
+
+A nova dimensão divide a visualização em painéis separados para cada ano. Cada painel, por sua vez, tem colunas para trimestres. Essa visualização é chamada de tabela aninhada porque exibe vários cabeçalhos, com trimestres aninhados dentro dos anos. A palavra "cabeçalhos" é um pouco enganosa neste exemplo porque os cabeçalhos do ano são exibidos na parte superior do gráfico, enquanto os cabeçalhos do trimestre são exibidos na parte inferior.
+
+![](https://help.tableau.com/current/pro/desktop/en-us/Img/example2c.png){fig-align="center" width="300"}
+
+Esta etapa mostra como você pode modificar a exibição de tabela aninhada para adicionar segmento de cliente. Ela cria o que chamamos de exibição de múltiplos pequenos .
+
+Arraste a dimensão Segmento do painel Dados e solte-a à esquerda de SOMA(Lucro) em Linhas.
+
+![](https://help.tableau.com/current/pro/desktop/en-us/Img/example3c.png){fig-align="center" width="400"}
+
+O campo é adicionado à prateleira Rows e os cabeçalhos de linha são criados. Cada cabeçalho representa um membro do campo Segment.
+
+Opcionalmente, você pode obter o mesmo resultado soltando Segmento logo à esquerda do eixo Lucro na exibição (mostrado na imagem abaixo). O Tableau geralmente oferece suporte a várias maneiras de adicionar campos à exibição.
+
+![](https://help.tableau.com/current/pro/desktop/en-us/Img/example3a.png){fig-align="center" width="400"}
+
+A nova dimensão divide a visualização em 12 painéis, um para cada combinação de ano e segmento. Esta visualização é um exemplo mais complexo de uma tabela aninhada. Qualquer visualização que contenha esse tipo de grade de gráficos individuais é chamada de visualização de múltiplos pequenos.
+
+![](https://help.tableau.com/current/pro/desktop/en-us/Img/example3b.png){fig-align="center" width="400"}
+
+Essa pode ser a quantidade certa de granularidade para a visualização. Outra opção neste ponto seria filtrar alguns dados da visualização para simplificá-la.
+
+Esta seção mostra como você pode concentrar sua exploração mostrando apenas um subconjunto dos dados, como modificar a exibição para mostrar apenas dados de pedidos em 2018 e 2019.
+
+Arraste a medida Data do pedido do painel Dados e solte-a na prateleira Filtros .
+
+![](https://help.tableau.com/current/pro/desktop/en-us/Img/example4a.png){fig-align="center" width="220"}
+
+Na caixa de diálogo Filter Field, escolha o nível de data que você deseja filtrar — Years . Em seguida, clique em Next .
+
+No próximo painel, desmarque quaisquer dois anos que você não deseja incluir na exibição, aqui 2021 e 2022.
+
+Quando terminar, clique em OK .
+
+A exibição é atualizada para mostrar apenas linhas de dados em que a Data do pedido é 2023 ou 2024. O Tableau agora pode alocar mais espaço para os dados do seu interesse.
+
+![](https://help.tableau.com/current/pro/desktop/en-us/Img/example4f.png){fig-align="center" width="400"}
+
+Em seguida, você aumentará os detalhes na exploração de dados arrastando um campo para a propriedade Cor no cartão Marcas.
+
+Arraste a dimensão Região do painel Dados e solte-a em Cor .
+
+Colocar uma dimensão em Color separa as marcas de acordo com os membros na dimensão e atribui uma cor exclusiva a cada membro. A legenda de cores exibe cada nome de membro e sua cor associada.
+
+![](https://help.tableau.com/current/pro/desktop/en-us/Img/example5a.png){fig-align="center" width="250"}
+
+Cada painel agora tem quatro linhas, uma para cada região. O viz agora está mostrando dados de lucro resumidos no nível de detalhes da Região.
+
+A visualização agora mostra o lucro de cada segmento de cliente e região em 2018 e 2019.
+
+![](https://help.tableau.com/current/pro/desktop/en-us/Img/example5b.png){fig-align="center" width="400"}
+
+## Vantagens e Desvantagens
+
+-   **Vantagens**:
+
+    -   Interface fácil e intuitiva.
+
+    -   Conexão com diversas fontes de dados.
+
+    -   Dashboards interativos e responsivos.
+
+    -   Suporte para machine learning e ampla comunidade.
+
+    -   Performance rápida com grandes volumes de dados.
+
+-   **Desvantagens**:
+
+    -   Alto custo de licenciamento.
+
+    -   Manipulação limitada para dados complexos.
+
+    -   Personalização limitada e dependência de dados estruturados.
+
+    -   Pode sofrer com desempenho em datasets muito grandes.
+
+## Conclusão
+
+O Tableau é uma ferramenta essencial para organizações que buscam otimizar sua tomada de decisão por meio da análise de dados. Sua interface intuitiva, combinada com recursos avançados como conexão a múltiplas fontes de dados, dashboards interativos e funcionalidades colaborativas, torna a plataforma acessível para usuários técnicos e não técnicos.
+
+Com diferentes versões e componentes, como Tableau Desktop, Public, Online e Server, a solução oferece flexibilidade para atender a necessidades específicas, desde análises locais até compartilhamentos em nuvem. A possibilidade de criar visualizações detalhadas e personalizadas, como gráficos de linha, tabelas aninhadas e exibições de múltiplos pequenos, evidencia sua capacidade de transformar dados complexos em insights acionáveis.
+
+Ao integrar aprendizado de máquina e promover uma cultura baseada em dados, o Tableau não apenas facilita análises criativas e ágeis, mas também impulsiona a inovação e a produtividade dentro das organizações. É, portanto, uma ferramenta poderosa para atender às crescentes demandas do mundo orientado por dados.
+
+## Referências
+
+-   TABLEAU. Começar a usar o Tableau. Disponível em:<https://help.tableau.com/current/guides/get-started-tutorial/pt-br/get-started-tutorial-home.htm>. Acesso em: 13 dez. 2024.

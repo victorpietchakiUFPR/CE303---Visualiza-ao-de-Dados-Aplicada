@@ -14,7 +14,7 @@ files_names <- c("tipos_mortalidade_MUN.RData", "tipos_mortalidade_REGIAO_SUL.RD
 
 # Carrega arquivos
 for (i in 1:length(files_names)) {
-  load(paste0(root_path, "/data/clean_data/", files_names[i]))
+  load(paste0(root_path, "../../data/clean_data/", files_names[i]))
 }
 
 tabela1 <- tipos_mortalidade_MUN %>%
@@ -28,16 +28,23 @@ tabela3 <- tabela1 %>%
   select(Municipio, Ano, UF, taxa_mortalidade, percent_nascidos_vivos)
 tabela3 %<>%
   left_join(municipios_UF_regioes %>% select(UF, Regiao, Estado) %>% unique(), by = c("UF" = "UF"))
-save(tabela3, file = paste0(root_path, "/data/clean_data/tabela3.RData"))
+save(tabela3, file = paste0(root_path, "../../data/clean_data/tabela3.RData"))
 
 
 tabela4 <- tipos_mortalidade_MUN %>%
   inner_join(plano_saude_MUN, by = c("Municipio", "Ano", "UF")) %>%
   select(Municipio, Ano, UF, tipo_mortalidade, taxa_mortalidade, percent_pessoas_cobertas_planos_saude_suplementar)
 tabela4 %<>%
-  left_join(municipios_UF_regioes %>% select(UF, Regiao, Estado) %>% unique(), by = c("UF" = "UF"))
-save(tabela4, file = paste0(root_path, "/data/clean_data/tabela4.RData"))
+  left_join(municipios_UF_regioes %>% select(UF, Regiao, Estado) %>% unique(), by = c("UF" = "UF")) %<>%
+  mutate(faixa_percentual_cobertura = cut(
+    percent_pessoas_cobertas_planos_saude_suplementar,
+    breaks = seq(0, 100, by = 10),  # Cria intervalos de 10%
+    labels = paste0(seq(0, 90, by = 10), "-", seq(10, 100, by = 10), "%"),
+    include.lowest = TRUE
+  ))
+save(tabela4, file = paste0(root_path, "../../data/clean_data/tabela4.RData"))
 
 
 tabela5 <- tipos_mortalidade_MUN$tipo_mortalidade %>% unique() %>% as.data.frame()
-save(tabela5, file = paste0(root_path, "/data/clean_data/tabela5.RData"))
+save(tabela5, file = paste0(root_path, "../../data/clean_data/tabela5.RData"))
+
